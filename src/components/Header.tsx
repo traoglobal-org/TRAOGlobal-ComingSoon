@@ -35,27 +35,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="mailto:contact@traoglobal.com"
-              className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-6 py-3 rounded-full font-medium text-sm hover:bg-foreground/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              Connect
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 17L17 7M17 7H7M17 7V17"
-                />
-              </svg>
-            </a>
+          {/* TRAO Global Text */}
+          <div className="hidden md:flex items-center">
+            <span className="font-semibold text-lg tracking-tight text-foreground">TRAO Global</span>
           </div>
 
           {/* Mobile Menu Button */}

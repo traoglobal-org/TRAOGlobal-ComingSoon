@@ -14,13 +14,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Placeholder */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">T</span>
-            </div>
-            <span className="font-bold text-xl tracking-tight">TRAO</span>
-          </div>
+          {/* Logo */}
+          <span className="font-bold text-2xl tracking-tight">TRAO Global</span>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

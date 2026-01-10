@@ -47,20 +47,37 @@ const Footer = () => {
   return (
     <footer className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6 lg:px-12 py-6">
-        <div className="flex items-center justify-center sm:justify-end gap-6">
-          {footerLinks.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`text-sm transition-colors duration-300 ${
-                index === footerLinks.length - 1
-                  ? "text-foreground font-medium hover:text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Social Links */}
+          <div className="flex items-center gap-3">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300 hover:scale-110"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Footer Links */}
+          <div className="flex items-center gap-6">
+            {footerLinks.map((link, index) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`text-sm transition-colors duration-300 ${
+                  index === footerLinks.length - 1
+                    ? "text-foreground font-medium hover:text-accent"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

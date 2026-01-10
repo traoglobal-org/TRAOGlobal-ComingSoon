@@ -3,8 +3,6 @@ import { Globe, TrendingUp, Shield, Package } from "lucide-react";
 const FloatingCards = () => {
   return (
     <div className="relative w-full h-full min-h-[500px] lg:min-h-[600px]">
-      {/* Amber Circle Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 lg:w-96 lg:h-96 bg-accent rounded-full opacity-80 blur-sm" />
       
       {/* Main Card */}
       <div className="absolute top-8 right-0 lg:top-12 lg:right-8 w-56 lg:w-64 bg-card rounded-2xl shadow-2xl p-4 animate-float border border-border/50">

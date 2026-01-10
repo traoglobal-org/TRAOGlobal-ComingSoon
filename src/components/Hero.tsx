@@ -1,10 +1,8 @@
 import { useState } from "react";
 import FloatingCards from "./FloatingCards";
-import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,8 +10,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen pt-20 flex items-center">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="min-h-screen pt-20 flex items-center relative overflow-hidden">
+      {/* Yellow Gradient Background */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 w-[400px] h-[400px] lg:w-[550px] lg:h-[550px] bg-gradient-to-br from-accent via-accent-glow to-accent-soft rounded-full opacity-70 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Content */}
           <div className="order-2 lg:order-1">
@@ -37,31 +40,26 @@ const Hero = () => {
               TRAO Global is preparing a next-generation trading platform connecting reliable suppliers with global buyers.
             </p>
 
-            {/* Email Form */}
+            {/* Email Form - Inline Style */}
             <form onSubmit={handleSubmit} className="animate-fade-up-delayed-3">
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-                <div className="flex-1 relative">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-5 py-4 bg-card border border-border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-muted-foreground"
-                    required
-                  />
-                </div>
+              <div className="relative max-w-xl">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-6 pr-36 sm:pr-44 py-4 bg-card border border-border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-muted-foreground"
+                  required
+                />
                 <button
                   type="submit"
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  className="inline-flex items-center justify-center gap-2 bg-foreground text-primary-foreground px-8 py-4 rounded-full font-medium text-sm hover:bg-foreground/90 transition-all duration-300 hover:scale-105 hover:shadow-xl group whitespace-nowrap"
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex items-center justify-center bg-foreground text-primary-foreground px-5 sm:px-6 py-2.5 rounded-full font-medium text-sm hover:bg-foreground/90 transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
                 >
-                  Connect With Us
-                  <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />
+                  Notify Me
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mt-4">
-                *We respect your privacy. No spam, ever.
+                *Don't worry we will not spam you :)
               </p>
             </form>
 

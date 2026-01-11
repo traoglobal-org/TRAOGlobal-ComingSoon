@@ -1,7 +1,27 @@
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-      <div className="container mx-auto px-6 lg:px-12">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md overflow-hidden">
+      {/* Yellow gradient on right side - matching Hero section */}
+      <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
+        <div 
+          className="absolute top-0 right-[10%] w-[600px] h-[250px] lg:w-[800px] lg:h-[300px]"
+          style={{
+            background: 'radial-gradient(ellipse 75% 80% at 60% 50%, rgba(251, 188, 4, 0.28) 0%, rgba(251, 188, 4, 0.16) 40%, rgba(251, 188, 4, 0.06) 65%, transparent 85%)',
+            filter: 'blur(70px)',
+            borderRadius: '55% 45% 60% 40% / 50% 50% 45% 55%'
+          }}
+        />
+        <div 
+          className="absolute top-0 right-[5%] w-[500px] h-[200px] lg:w-[700px] lg:h-[250px]"
+          style={{
+            background: 'radial-gradient(ellipse 70% 75% at 65% 55%, rgba(251, 234, 153, 0.32) 0%, rgba(251, 234, 153, 0.18) 45%, rgba(251, 234, 153, 0.06) 70%, transparent 90%)',
+            filter: 'blur(80px)',
+            borderRadius: '60% 40% 50% 50% / 55% 45% 50% 50%'
+          }}
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">

@@ -4,6 +4,7 @@ import image1 from "@/assets/1.jpg";
 import image2 from "@/assets/2.jpeg";
 import image3 from "@/assets/3.png";
 import image4 from "@/assets/4.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -21,8 +22,8 @@ const Hero = () => {
           <div className="flex items-center h-20">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">T</span>
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src={logo} alt="TRAO Global" className="w-full h-full object-contain" />
               </div>
               <span className="font-bold text-xl tracking-tight">TRAO Global</span>
             </div>

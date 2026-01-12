@@ -15,24 +15,66 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden">
+    <section className="min-h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden">
       {/* Integrated Header */}
       <div className="fixed top-0 left-0 right-0 z-[100] bg-background/95 backdrop-blur-md">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex items-center h-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 flex items-center justify-center">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center">
                 <img src={logo} alt="TRAO Global" className="w-full h-full object-contain" />
               </div>
-              <span className="font-bold text-xl tracking-tight">TRAO Global</span>
+              <span className="font-bold text-lg sm:text-xl tracking-tight">TRAO Global</span>
+            </div>
+            
+            {/* Mobile CTA Buttons - Show on mobile/tablet */}
+            <div className="flex md:hidden items-center gap-2">
+              <a
+                href="mailto:contact@traoglobal.com"
+                className="inline-flex items-center gap-1.5 bg-foreground text-primary-foreground px-3 py-2 rounded-full font-medium text-xs hover:bg-foreground/90 transition-all"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <span className="hidden xs:inline">Email</span>
+              </a>
+              <a
+                href="tel:+917019605977"
+                className="inline-flex items-center gap-1.5 bg-foreground text-primary-foreground px-3 py-2 rounded-full font-medium text-xs hover:bg-foreground/90 transition-all"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span className="hidden xs:inline">Call</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Yellow Circle with sharp boundary - shifted right */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 translate-x-8 lg:translate-x-16 w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] pointer-events-none z-0">
+      {/* Yellow Circle with sharp boundary - positioned to avoid overlap */}
+      <div className="absolute top-[400px] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:left-1/2 md:translate-x-8 lg:translate-x-16 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] lg:w-[350px] lg:h-[350px] pointer-events-none z-0">
         <div className="w-full h-full rounded-full" 
              style={{
                backgroundColor: '#FBBC04'
@@ -41,7 +83,7 @@ const Hero = () => {
       </div>
 
       {/* Animated Image Grid over Yellow Circle */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 translate-x-8 lg:translate-x-16 w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] z-10 hidden md:block">
+      <div className="absolute top-[400px] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:left-1/2 md:translate-x-8 lg:translate-x-16 w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] lg:w-[380px] lg:h-[380px] z-10">
         <div className="relative w-full h-full">
           {/* Large Image - Top Left */}
           <div className="absolute top-[-8%] left-[-10%] w-[55%] h-[50%] overflow-hidden rounded-xl shadow-2xl animate-float border border-black/20">
@@ -85,7 +127,7 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Main irregular gradient blob extending upward and left to cover text */}
         <div 
-          className="absolute top-0 left-1/4 w-[900px] h-[65%] lg:w-[1100px] lg:h-[70%]"
+          className="absolute top-0 left-1/4 md:left-1/4 w-[500px] sm:w-[700px] md:w-[900px] h-[65%] lg:w-[1100px] lg:h-[70%]"
           style={{
             background: 'radial-gradient(ellipse 75% 80% at 55% 85%, rgba(251, 188, 4, 0.28) 0%, rgba(251, 188, 4, 0.16) 40%, rgba(251, 188, 4, 0.06) 65%, transparent 85%)',
             filter: 'blur(70px)',
@@ -94,7 +136,7 @@ const Hero = () => {
         />
         {/* Secondary gradient for smooth blending */}
         <div 
-          className="absolute -top-10 left-[15%] w-[800px] h-[60%] lg:w-[1000px] lg:h-[65%]"
+          className="absolute -top-10 left-[15%] md:left-[15%] w-[450px] sm:w-[600px] md:w-[800px] h-[60%] lg:w-[1000px] lg:h-[65%]"
           style={{
             background: 'radial-gradient(ellipse 70% 75% at 50% 90%, rgba(251, 234, 153, 0.32) 0%, rgba(251, 234, 153, 0.18) 45%, rgba(251, 234, 153, 0.06) 70%, transparent 90%)',
             filter: 'blur(80px)',
@@ -103,7 +145,7 @@ const Hero = () => {
         />
         {/* Top gradient for smooth fade to header */}
         <div 
-          className="absolute -top-20 left-[20%] w-[700px] h-[50%] lg:w-[900px] lg:h-[55%]"
+          className="absolute -top-20 left-[20%] md:left-[20%] w-[400px] sm:w-[550px] md:w-[700px] h-[50%] lg:w-[900px] lg:h-[55%]"
           style={{
             background: 'radial-gradient(ellipse 80% 70% at 45% 100%, rgba(251, 188, 4, 0.12) 0%, rgba(251, 188, 4, 0.05) 60%, transparent 100%)',
             filter: 'blur(90px)',
@@ -113,33 +155,33 @@ const Hero = () => {
       </div>
 
       {/* Main content area */}
-      <div className="flex-1 flex items-center">
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="flex-1 flex items-start md:items-center pt-20 sm:pt-24 md:pt-20 pb-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="max-w-2xl">
             {/* Left Content */}
             <div>
             {/* Coming Soon Label */}
             <div className="animate-fade-up">
-              <span className="inline-flex items-center text-foreground text-base font-semibold mb-6">
-                <span className="w-6 h-px bg-foreground mr-3" />
+              <span className="inline-flex items-center text-foreground text-sm sm:text-base font-semibold mb-4 sm:mb-6">
+                <span className="w-4 sm:w-6 h-px bg-foreground mr-2 sm:mr-3" />
                 Coming Soon
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.1] tracking-tight mb-6 animate-fade-up-delayed">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6 animate-fade-up-delayed">
               Global Trade,
               <br />
               <span className="text-foreground">Built on Trust.</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-foreground/80 text-sm lg:text-base max-w-md mb-8 animate-fade-up-delayed-2">
+            <p className="text-foreground/80 text-sm lg:text-base max-w-md mb-6 sm:mb-8 animate-fade-up-delayed-2">
               Connecting Trusted Indian Supply with Global Demand.
             </p>
 
-            {/* Connect Buttons */}
-            <div className="flex flex-wrap gap-4 animate-fade-up-delayed-3">
+            {/* Connect Buttons - Hidden on mobile, shown on desktop */}
+            <div className="hidden md:flex flex-wrap gap-4 animate-fade-up-delayed-3">
               {/* Connect Button with Email Icon */}
               <a
                 href="mailto:contact@traoglobal.com"
@@ -196,21 +238,41 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Value Highlights */}
-            <div className="flex flex-wrap gap-6 mt-10 animate-fade-up-delayed-3">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            {/* Value Highlights - Below content on desktop, separate section on mobile */}
+            <div className="hidden md:flex flex-wrap gap-3 sm:gap-6 mt-6 sm:mt-10 animate-fade-up-delayed-3">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                 Seamless sourcing
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                 Transparent partnerships
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                 Worldwide reach
               </div>
             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Value Highlights - Mobile only, after grid */}
+      <div className="md:hidden relative z-20 mt-[350px] pb-6">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-up-delayed-3">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+              Seamless sourcing
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+              Transparent partnerships
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+              Worldwide reach
             </div>
           </div>
         </div>

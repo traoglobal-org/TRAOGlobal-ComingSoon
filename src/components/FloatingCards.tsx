@@ -4,8 +4,8 @@ const FloatingCards = () => {
   return (
     <div className="relative w-full h-full min-h-[500px] lg:min-h-[600px]">
       
-      {/* Main Card */}
-      <div className="absolute top-8 right-0 lg:top-12 lg:right-8 w-56 lg:w-64 bg-card rounded-2xl shadow-2xl p-4 animate-float border border-border/50">
+      {/* Main Card - Hidden on mobile */}
+      <div className="hidden md:block absolute top-8 right-0 lg:top-12 lg:right-8 w-48 sm:w-56 lg:w-64 bg-card rounded-2xl shadow-2xl p-3 sm:p-4 animate-float border border-border/50 z-[5]">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
             <Globe className="w-5 h-5 text-accent-foreground" />
@@ -25,8 +25,8 @@ const FloatingCards = () => {
         </div>
       </div>
 
-      {/* Stats Card */}
-      <div className="absolute bottom-32 right-12 lg:bottom-40 lg:right-24 w-44 lg:w-52 bg-card rounded-2xl shadow-xl p-4 animate-float-delayed border border-border/50">
+      {/* Stats Card - Hidden on mobile */}
+      <div className="hidden md:block absolute bottom-32 right-8 sm:right-12 lg:bottom-40 lg:right-24 w-40 sm:w-44 lg:w-52 bg-card rounded-2xl shadow-xl p-3 sm:p-4 animate-float-delayed border border-border/50 z-[5]">
         <div className="flex items-center justify-between mb-3">
           <TrendingUp className="w-5 h-5 text-accent" />
           <span className="text-xs font-medium text-muted-foreground">Growth</span>
@@ -42,8 +42,8 @@ const FloatingCards = () => {
         </div>
       </div>
 
-      {/* Trust Badge */}
-      <div className="absolute top-1/3 left-0 lg:left-4 w-48 bg-card rounded-2xl shadow-lg p-4 animate-float-slow border border-border/50">
+      {/* Trust Badge - Hidden on mobile */}
+      <div className="hidden md:block absolute top-[35%] left-0 lg:left-4 w-40 sm:w-48 bg-card rounded-2xl shadow-lg p-3 sm:p-4 animate-float-slow border border-border/50 z-[5]">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-foreground rounded-full flex items-center justify-center">
             <Shield className="w-5 h-5 text-primary-foreground" />
@@ -55,8 +55,8 @@ const FloatingCards = () => {
         </div>
       </div>
 
-      {/* Product Card */}
-      <div className="absolute bottom-8 left-8 lg:bottom-16 lg:left-0 w-40 bg-card rounded-2xl shadow-lg p-3 animate-float border border-border/50">
+      {/* Product Card - Hidden on mobile */}
+      <div className="hidden md:block absolute bottom-12 left-0 sm:left-4 lg:bottom-16 lg:left-0 w-32 sm:w-40 bg-card rounded-2xl shadow-lg p-2 sm:p-3 animate-float border border-border/50 z-[5]">
         <div className="w-full h-20 bg-muted rounded-lg mb-2 flex items-center justify-center">
           <Package className="w-8 h-8 text-muted-foreground" />
         </div>
